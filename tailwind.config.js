@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       colors: {
         sky: "#1fb6ff",
-        "blue-dark": "#1810ff",
+        "blue-dark": "#1a309f82",
         "blue": "#407bff",
       },
       backgroundImage: {

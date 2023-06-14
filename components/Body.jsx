@@ -1,3 +1,4 @@
+import Footer from "./Footer"
 import Mission from "./Mission"
 import WhatWeDo from "./WhatWeDo"
 import Works from "./Works"
@@ -8,6 +9,7 @@ const Body = () => {
       <Mission/>
       <WhatWeDo/>
       <Works/>
+      <Footer/>
     </div>
   )
 }

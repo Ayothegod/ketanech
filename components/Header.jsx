@@ -23,14 +23,14 @@ const Header = () => {
 
         <ul className="bg-neutral-100 absolute sm:static right-0 top-0 sm:bg-white h-screen sm:h-auto w-[80vw] sm:w-auto ">
           <div className="bg-white grid place-items-end shadow p-3 sm:hidden">
-            <GrClose className="text-2xl cursor-pointer" onClick={() => setMenu(!menu)} />
+            <GrClose className="text-2xl cursor-pointer text-blue" onClick={() => setMenu(!menu)} />
           </div>
           <div className=" gap-1 font-semibold flex flex-col sm:flex-row  px-2 py-2 sm:py-0 mt-4 sm:mt-0 text-neutral-500">
-            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Home<IoMdArrowForward className="sm:hidden text-xl"/></li></Link>
-            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">About <IoMdArrowForward className="sm:hidden text-xl"/></li></Link>
-            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Services <IoMdArrowForward className="sm:hidden text-xl"/></li></Link>
-            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Contact <IoMdArrowForward className="sm:hidden text-xl"/></li></Link>
-            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Training <IoMdArrowForward className="sm:hidden text-xl"/></li></Link>
+            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Home<IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
+            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">About <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
+            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Services <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
+            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Contact <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
+            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Training <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
           </div>
           <div className="bg-white mt-4 shadow sm:hidden p-2 mx-2">
             <button className="bg-blue text-white w-full py-2 font-semibold rounded flex items-center gap-2 justify-center">Contact Us <AiFillContainer/></button>
