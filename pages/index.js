@@ -1,10 +1,7 @@
-// import { Inter } from 'next/font/google'
-// import james4 from "@/asset/james-kovin-qqLxF3M-MA8-unsplash-4.jpg"
 import nuno4 from "@/asset/nuno-marques-0GbrjL3vZF4-unsplash-4.jpg"
 import Body from "@/components/Body";
 import Header from "@/components/Header";
 
-// const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
