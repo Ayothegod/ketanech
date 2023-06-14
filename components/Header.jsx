@@ -30,7 +30,7 @@ const Header = () => {
           </div>
           <div className=" gap-1 font-semibold flex flex-col sm:flex-row  px-2 py-2 sm:py-0 mt-4 sm:mt-0 text-neutral-500">
             <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Home<IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
-            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">About <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
+            <Link href="/about"><li className="bg-white p-3 shadow-sm flex items-center justify-between">About <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
             <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Services <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
             <Link href="/contact"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Contact <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
             <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Training <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
