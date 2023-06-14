@@ -74,7 +74,7 @@ const Footer = () => {
             <div className="border-t border-t-gray-300 flex flex-col items-center justify-center py-2">
                 <p className="flex items-center text-sm"><FaRegCopyright /> 2023 Ketanech Services. all rights reserved. </p>
                 <p className="text-xs">site by <Link href="https://ayomide.me">
-                    <button className="bg-white text-blue p-1 rounded hover:text-white hover:bg-purple-600">AioLabs</button>
+                    <button className="bg-white font-bold text-blue p-1 rounded hover:text-white hover:bg-purple-600">AioLabs</button>
                 </Link></p>
             </div>
         </div>
