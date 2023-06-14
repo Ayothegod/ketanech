@@ -29,7 +29,7 @@ const Header = () => {
             <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Home<IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
             <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">About <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
             <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Services <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
-            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Contact <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
+            <Link href="/contact"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Contact <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
             <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Training <IoMdArrowForward className="sm:hidden text-xl text-blue"/></li></Link>
           </div>
           <div className="bg-white mt-4 shadow sm:hidden p-2 mx-2">
