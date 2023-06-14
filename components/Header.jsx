@@ -10,9 +10,12 @@ const Header = () => {
   return (
     <div className="flex relative sm:items-center sm:justify-between py-2 px-4 overflow-hidden max-w-[60rem] mx-auto">
       <div className="flex items-center justify-between w-full sm:w-auto">
-        <nav className="text-2xl font-bold">
+        <Link href="/">
+
+        <nav className="text-2xl font-bold cursor-pointer">
           KTS.
         </nav>
+        </Link>
         <div className="sm:hidden text-2xl" onClick={() => setMenu(!menu)}>
           <AiOutlineMenu />
         </div>
