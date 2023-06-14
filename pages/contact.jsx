@@ -23,8 +23,30 @@ export default function Contact() {
                     <p className="text-center text-lg flex items-center gap-2 mt-2"><MdLocationPin className="text-blue text-2xl sm:text-4xl"/>73, Hammed Omidiran way, Kolabalogun area, Osogbo, Osun State</p>
                 </div>
             </div>
-            <div className="h-40 p-10">
+            <div className="px-4 py-10">
                 <h2 className="text-blue text-center font-semibold text-4xl ">Get in touch.</h2>
+                <div className="max-w-[40rem] mx-auto mt-2 space-y-4">
+                    <span className="flex flex-col gap-1">
+                        <label htmlFor="company-name" className="text-lg text-gray-500">Full Name <span className="absolute text-black text-xl">*</span></label>
+                        <input type="text" placeholder="Fullname" className="border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue"/>
+                    </span>
+                    <span className="flex flex-col gap-1">
+                        <label htmlFor="company-name" className="text-lg text-gray-500">Email<span className="absolute text-black text-xl">*</span></label>
+                        <input type="text" placeholder="Email" className="border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue"/>
+                    </span>
+                    <span className="flex flex-col gap-1">
+                        <label htmlFor="company-name" className="text-lg text-gray-500">Company Name</label>
+                        <input type="text" placeholder="Company Name" className="border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue"/>
+                    </span>
+                    <span className="flex flex-col gap-1">
+                        <label htmlFor="company-name" className="text-lg text-gray-500">Enquiry<span className="absolute text-black text-xl">*</span></label>
+                        <textarea name="enquiry" id=""  rows="4" placeholder="Your enquiry here" className="border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue"></textarea>
+                    </span>
+
+                </div>
+                <div className="grid place-items-center mt-4">
+                <button className="bg-blue py-2 px-12 text-white rounded font-semibold">Submit Enquiry</button>
+                </div>
             </div>
             <Footer />
         </div>
