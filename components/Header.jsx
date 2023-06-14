@@ -2,6 +2,8 @@ import Link from "next/link"
 import { useState } from "react"
 import { AiOutlineMenu } from "react-icons/ai"
 import { GrClose } from "react-icons/gr"
+import { IoMdArrowForward } from "react-icons/io"
+import { AiFillContainer } from "react-icons/ai"
 
 const Header = () => {
   const [menu, setMenu] = useState(false)
@@ -24,14 +26,14 @@ const Header = () => {
             <GrClose className="text-2xl cursor-pointer" onClick={() => setMenu(!menu)} />
           </div>
           <div className=" gap-1 font-semibold flex flex-col sm:flex-row  px-2 py-2 sm:py-0 mt-4 sm:mt-0 text-neutral-500">
-            <Link href="/"><li className="bg-white p-3 shadow-sm">Home</li></Link>
-            <Link href="/"><li className="bg-white p-3 shadow-sm">About</li></Link>
-            <Link href="/"><li className="bg-white p-3 shadow-sm">Services</li></Link>
-            <Link href="/"><li className="bg-white p-3 shadow-sm">Contact</li></Link>
-            <Link href="/"><li className="bg-white p-3 shadow-sm">Training</li></Link>
+            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Home<IoMdArrowForward className="sm:hidden text-xl"/></li></Link>
+            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">About <IoMdArrowForward className="sm:hidden text-xl"/></li></Link>
+            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Services <IoMdArrowForward className="sm:hidden text-xl"/></li></Link>
+            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Contact <IoMdArrowForward className="sm:hidden text-xl"/></li></Link>
+            <Link href="/"><li className="bg-white p-3 shadow-sm flex items-center justify-between">Training <IoMdArrowForward className="sm:hidden text-xl"/></li></Link>
           </div>
           <div className="bg-white mt-4 shadow sm:hidden p-2 mx-2">
-            <button className="bg-blue text-white w-full py-2 font-semibold rounded">Contact Us</button>
+            <button className="bg-blue text-white w-full py-2 font-semibold rounded flex items-center gap-2 justify-center">Contact Us <AiFillContainer/></button>
           </div>
           <div className="sm:hidden bg-white mt-4 shadow p-2 mx-2">
             <button className="hover:bg-blue border border-blue text-blue hover:text-white w-full py-2 text-lg font-semibold rounded">Training Program</button>
