@@ -7,7 +7,7 @@ import Image from "next/image"
 
 const WhatWeDo = () => {
     return (
-        <div className="mt-8 mb-16 max-w-[70rem] mx-auto p-2">
+        <div className="mt-8 max-w-[70rem] mx-auto p-2">
             <h2 className="grid place-items-center text-xl text-blue font-semibold uppercase text-center mb-2">What we do.</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <div className=" relative" >
