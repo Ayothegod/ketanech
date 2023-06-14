@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="max-w-[60rem] mx-auto p-2 ">
+            <div className="max-w-[60rem] mx-auto py-8 p-2 ">
                 <h2 className="text-2xl font-bold uppercase mb-2 ">KTS.</h2>
                 <div className="flex gap-20">
                     <div>

@@ -8,7 +8,7 @@ import { AiFillContainer } from "react-icons/ai"
 const Header = () => {
   const [menu, setMenu] = useState(false)
   return (
-    <div className="flex relative sm:items-center sm:justify-between py-2 px-4 overflow-hidden max-w-[70rem] mx-auto">
+    <div className="flex relative sm:items-center sm:justify-between py-2 px-4 overflow-hidden max-w-[60rem] mx-auto">
       <div className="flex items-center justify-between w-full sm:w-auto">
         <nav className="text-2xl font-bold">
           KTS.
