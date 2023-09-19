@@ -1,9 +1,12 @@
-
+import Header from "@/components/Header";
 
 const Training = () => {
   return (
-    <div>Training</div>
+    <main>
+      <Header />
+      <div className="min-h-screen bg-gray-200"></div>
+    </main>
   )
 }
 
-export default Training
+export default Training;
