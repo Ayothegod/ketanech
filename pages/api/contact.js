@@ -6,14 +6,14 @@ export default async function handler(req, res) {
         try {
             await sendMail(
                 "ayodasilva12@gmail.com",
-                "TEST",
+                "TEST CASE",
                 "DATA"
               );
               return res.status(200).send("Success")
-        } catch (error) {
+        } catch (err) {
             return res.status(400).json({
                 error_code: "api_one",
-                message: err.message,
+                message: err,
               });
         }
     }
