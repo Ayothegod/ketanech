@@ -14,8 +14,10 @@ export default function Contact() {
   } = useForm();
 
   const submitData = async (data) => {
-    // console.log(data);
-    await sendApiData("/api/contact", data);
+    const res = await sendApiData("/api/contact", data);
+    // const resp = res.json()
+    console.log(res)
+
   };
   return (
     <div>
