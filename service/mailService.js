@@ -22,7 +22,6 @@ export async function sendMail(fromEmail, subject, otpText) {
       (err, response) => {
         if (err) {
           reject(err);
-          console.log(err);
         } else {
           resolve(response);
           console.log(response);

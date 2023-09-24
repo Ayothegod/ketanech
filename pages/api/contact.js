@@ -6,11 +6,7 @@ export default async function handler(req, res) {
       const { fullName, email, enquiry, details } = req.body;
 
       await sendMail(email, enquiry, details);
-      return res.status(200).json({
-        status: "OK",
-        msg: "Success! email successfully sent",
-        statusCode: 200,
-      });
+      return res.status(200).json("okay");
     } catch (err) {
       return res.status(400).json({
         error_code: 400,
@@ -25,3 +21,9 @@ export default async function handler(req, res) {
     msg: "Wrong request, try again later",
   });
 }
+
+// {
+//   status: "OK",
+//   msg: "Success! email successfully sent",
+//   statusCode: 200,
+// }

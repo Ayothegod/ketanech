@@ -5,18 +5,43 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import { sendApiData } from "@/libs/api";
+import toast from "react-hot-toast";
+import { useState } from "react";
+import { BiLoaderAlt } from "react-icons/bi";
 
 export default function Contact() {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
+  const [emailLoader, setEmailLoader] = useState(false);
 
   const submitData = async (data) => {
-    const dat = await sendApiData("/api/contact", data);
-    console.log(dat)
+    setEmailLoader(true);
+    const response = await sendApiData("/api/contact", data);
+    try {
+      if (response.status === 200) {
+        reset()
+        toast.success("Email successfully sent.", {
+          duration: 3000,
+        })
+        setEmailLoader(false);
+      } else {
+        toast.error("Emails not sent. check your internet connection.", {
+          duration: 2000,
+        });
+        setEmailLoader(false);
+      }
+    } catch (error) {
+      toast.error("Error encountered! try again later.", {
+        duration: 2000,
+      });
+      setEmailLoader(false);
+    }
   };
+  
   return (
     <div>
       <Header />
@@ -134,8 +159,8 @@ export default function Contact() {
               rows="4"
               placeholder="Your details here"
               {...register("details", {
-                required: "Enquiry details is required",
-                minLength: 10,
+                required: "Enquiry details must not be less than 20 strings.",
+                minLength: 20,
               })}
               className={`border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue ${
                 errors.details &&
@@ -149,8 +174,12 @@ export default function Contact() {
             )}
           </span>
           <div className="grid place-items-center mt-4">
-            <button className="bg-blue py-2 px-12 text-white rounded font-semibold">
-              Submit Enquiry
+            <button className="bg-blue py-2 px-12 text-white rounded font-semibold grid place-items-center w-60">
+              {emailLoader ? (
+                <BiLoaderAlt className="animate-spin h-5 w-5" />
+              ) : (
+                "Submit Enquiry"
+              )}
             </button>
           </div>
         </form>
