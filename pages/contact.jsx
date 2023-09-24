@@ -3,9 +3,9 @@ import Header from "@/components/Header";
 import { GrMail } from "react-icons/gr";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-//
+import { sendApiData } from "@/libs/api";
+
 export default function Contact() {
   const {
     register,
@@ -13,8 +13,9 @@ export default function Contact() {
     formState: { errors },
   } = useForm();
 
-  const submitData = (data) => {
-    console.log(data);
+  const submitData = async (data) => {
+    // console.log(data);
+    await sendApiData("/api/contact", data);
   };
   return (
     <div>
@@ -103,25 +104,35 @@ export default function Contact() {
             )}
           </span>
           <span className="flex flex-col gap-1">
-            <label htmlFor="company-name" className="text-lg text-gray-500">
-              Company Name
+            <label htmlFor="enquiry" className="text-lg text-gray-500">
+              Enquiry <span className="absolute text-black text-xl">*</span>
             </label>
             <input
               type="text"
-              placeholder="Company Name"
-              {...register("companyName")}
-              className={`border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue`}
+              placeholder="Enquiry"
+              {...register("enquiry", {
+                required: "Enquiry is required",
+                minLength: 3,
+              })}
+              className={`border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue ${
+                errors.enquiry &&
+                "border-red-600 focus:border-red-600 outline-red-600"
+              }`}
             />
+            {errors.enquiry && (
+              <p className="text-sm text-red-600 font-mono">
+                {errors.enquiry.message}
+              </p>
+            )}
           </span>
           <span className="flex flex-col gap-1">
             <label htmlFor="company-name" className="text-lg text-gray-500">
-              Enquiry<span className="absolute text-black text-xl">*</span>
+              Details<span className="absolute text-black text-xl">*</span>
             </label>
             <textarea
-              name="enquiry"
-              id=""
+              name="details"
               rows="4"
-              placeholder="Your enquiry here"
+              placeholder="Your details here"
               {...register("details", {
                 required: "Enquiry details is required",
                 minLength: 10,
@@ -131,7 +142,7 @@ export default function Contact() {
                 "border-red-600 focus:border-red-600 outline-red-600"
               }`}
             ></textarea>
-                        {errors.details && (
+            {errors.details && (
               <p className="text-sm text-red-600 font-mono">
                 {errors.details.message}
               </p>

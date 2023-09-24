@@ -1,5 +1,6 @@
 
-export const sendContactData = async(url, data) => {
+//  for any post request
+export const sendApiData = async (url, data) => {
      fetch(url, {
         method:"POST",
         headers:{
