@@ -4,14 +4,18 @@ import { GrMail } from "react-icons/gr";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 //
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    enquiry: "",
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const submitData = (data) => {
+    console.log(data);
+  };
   return (
     <div>
       <Header />
@@ -22,6 +26,7 @@ export default function Contact() {
           </h1>
         </div>
       </div>
+
       <div className="bg-gray-200 p-4 sm:p-10 shadow-md">
         <div className="max-w-[40rem] mx-auto">
           <p className="text-gray-500 text-lg ">
@@ -44,11 +49,15 @@ export default function Contact() {
           </p>
         </div>
       </div>
+
       <div className="px-4 py-10">
         <h2 className="text-blue text-center font-semibold text-4xl ">
           Get in touch.
         </h2>
-        <div className="max-w-[40rem] mx-auto mt-2 space-y-4">
+        <form
+          onSubmit={handleSubmit(submitData)}
+          className="max-w-[40rem] mx-auto mt-2 space-y-4"
+        >
           <span className="flex flex-col gap-1">
             <label htmlFor="company-name" className="text-lg text-gray-500">
               Full Name <span className="absolute text-black text-xl">*</span>
@@ -56,18 +65,42 @@ export default function Contact() {
             <input
               type="text"
               placeholder="Fullname"
-              className="border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue"
+              {...register("fullName", {
+                required: "full name is required",
+                minLength: 3,
+              })}
+              className={`border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue ${
+                errors.fullName &&
+                "border-red-600 focus:border-red-600 outline-red-600"
+              }`}
             />
+            {errors.fullName && (
+              <p className="text-sm text-red-600 font-mono">
+                {errors.fullName.message}
+              </p>
+            )}
           </span>
           <span className="flex flex-col gap-1">
-            <label htmlFor="company-name" className="text-lg text-gray-500">
+            <label htmlFor="Email" className="text-lg text-gray-500">
               Email<span className="absolute text-black text-xl">*</span>
             </label>
             <input
               type="text"
               placeholder="Email"
-              className="border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue"
+              {...register("email", {
+                required: "Email Address is required",
+                minLength: 3,
+              })}
+              className={`border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue ${
+                errors.email &&
+                "border-red-600 focus:border-red-600 outline-red-600"
+              }`}
             />
+            {errors.email && (
+              <p className="text-sm text-red-600 font-mono">
+                {errors.email.message}
+              </p>
+            )}
           </span>
           <span className="flex flex-col gap-1">
             <label htmlFor="company-name" className="text-lg text-gray-500">
@@ -76,7 +109,8 @@ export default function Contact() {
             <input
               type="text"
               placeholder="Company Name"
-              className="border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue"
+              {...register("companyName")}
+              className={`border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue`}
             />
           </span>
           <span className="flex flex-col gap-1">
@@ -88,15 +122,27 @@ export default function Contact() {
               id=""
               rows="4"
               placeholder="Your enquiry here"
-              className="border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue"
+              {...register("details", {
+                required: "Enquiry details is required",
+                minLength: 10,
+              })}
+              className={`border border-gray-400 rounded py-2 px-2 outline-blue focus:border-blue ${
+                errors.details &&
+                "border-red-600 focus:border-red-600 outline-red-600"
+              }`}
             ></textarea>
+                        {errors.details && (
+              <p className="text-sm text-red-600 font-mono">
+                {errors.details.message}
+              </p>
+            )}
           </span>
-        </div>
-        <div className="grid place-items-center mt-4">
-          <button className="bg-blue py-2 px-12 text-white rounded font-semibold">
-            Submit Enquiry
-          </button>
-        </div>
+          <div className="grid place-items-center mt-4">
+            <button className="bg-blue py-2 px-12 text-white rounded font-semibold">
+              Submit Enquiry
+            </button>
+          </div>
+        </form>
       </div>
       <Footer />
     </div>
