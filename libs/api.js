@@ -1,6 +1,6 @@
 //  for any post request
-export const sendApiData = (url, data) => {
-  const res = fetch(url, {
+export const sendApiData = async (url, data) => {
+  const res = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -8,4 +8,6 @@ export const sendApiData = (url, data) => {
     },
     body: JSON.stringify(data),
   });
+  return res
+  // console.log(res);
 };
