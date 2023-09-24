@@ -9,5 +9,4 @@ export const sendApiData = async (url, data) => {
     body: JSON.stringify(data),
   });
   return res
-  // console.log(res);
 };
