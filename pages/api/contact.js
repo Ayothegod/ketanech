@@ -5,9 +5,9 @@ export default async function handler(req, res) {
     if(req.method == "POST"){
         try {
             await sendMail(
-                "ayodasilva12@gmail.com",
+                "heyayomideadebisi@gmail.com",
                 "TEST CASE",
-                "DATA"
+                "heyayomideadebisi@gmail.com and content"
               );
               return res.status(200).send("Success")
         } catch (err) {
